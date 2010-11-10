@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>zip2address sample</title>
+<style>
+pre {
+	border: 1px solid #999;
+	background: #EFEFEF;
+	padding: 10px;
+}
+</style>
+</head>
+<body>
+<h1>zip2address sample</h1>
+
+<input type='text' placeholder='150-0001'>
+<button>取得</button>
+<div id='debug'></div>
+
+<pre><code>var input = $('input'),
+    debug = $('#debug');
+
+$('button').click(function() {
+    zip2address(input.val(), function(address) {
+        var msg = address ? [
+            '住所: ' + address.all,
+            '都道府県: ' + address.pref,
+            '市町村: ' + address.city
+        ].join('&lt;br&gt;')
+        : '取得に失敗しました';
+
+        debug.html(msg);
+    });
+});
+</code></pre>
+
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js'></script>
+<script src='../zip2address.js'></script>
+<script>
+var input = $('input'),
+	debug = $('#debug');
+
+$('button').click(function() {
+	zip2address(input.val(), function(address) {
+		var msg = address ? [
+			'住所: ' + address.all,
+			'都道府県: ' + address.pref,
+			'市町村: ' + address.city
+		].join('<br>')
+		: '取得に失敗しました';
+
+		debug.html(msg);
+	});
+});
+</script>
+</body>
+</html>
