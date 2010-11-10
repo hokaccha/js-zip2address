@@ -46,6 +46,14 @@ var zip2address = function(zip, callback) {
 		head.removeChild(script);
 	};
 
+	// check zip formtting
+	if (/^\d{7}$/.test(zip)) {
+		zip = zip.toString().replace(/(\d{3})(\d{4})/, '$1-$2');
+	}
+	else if (!/^\d{3}-\d{4}$/.test(zip)) {
+		throw new Error('zip format is invalid');
+	}
+
 	// call api by jsonp
 	url += '&text=' + encodeURIComponent(zip);
 	script.setAttribute('src', url);
