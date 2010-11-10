@@ -57,7 +57,10 @@ var zip2address = function(zip, callback) {
 		callback(address);
 
 		// cleaning
-		delete window[ jsonp_callback ];
+		try {
+			delete window[ jsonp_callback ];
+		}
+		catch (e) {}
 		head.removeChild(script);
 	};
 
