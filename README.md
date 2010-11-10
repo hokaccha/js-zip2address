@@ -10,5 +10,5 @@
 
     <script src='zip2address.js'></script>
     <script>
-        zip2address(zip, callback(address) { ... });
+        zip2address(zip, function(address) { ... });
     </script>
