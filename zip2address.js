@@ -51,7 +51,7 @@ var zip2address = function(zip, callback) {
 		zip = zip.toString().replace(/(\d{3})(\d{4})/, '$1-$2');
 	}
 	else if (!/^\d{3}-\d{4}$/.test(zip)) {
-		throw new Error('zip format is invalid');
+		callback(undefined);
 	}
 
 	// call api by jsonp

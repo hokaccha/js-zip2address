@@ -26,12 +26,10 @@ asyncTest("undefined address", function() {
 	});
 });
 
-test("zip format invalid", function() {
+asyncTest("invalid zip format", function() {
 	expect(1);
-	try {
-		zip2address('hoge');
-	}
-	catch (e) {
-		equals(e.message, 'zip format is invalid');
-	}
+	zip2address('hoge', function(address) {
+		start();
+		equal(address, undefined);
+	});
 });
