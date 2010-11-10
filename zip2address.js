@@ -8,6 +8,9 @@
  * @author   Kazuhito Hokamura (http://webtech-walker.com/)
  * @version  0.0.1
  *
+ * This script inspired by jQuery.zip2addr. (https://github.com/kotarok/jQuery.zip2addr)
+ * Thank you for kotarok.
+ *
  */
 
 (function(window) {
