@@ -1,3 +1,15 @@
+/*
+ * zip2address.js
+ *
+ * Copyright (c) 2010 Kazuhito Hokamura
+ * Licensed under the MIT License:
+ * http://www.opensource.org/licenses/mit-license.php
+ *
+ * @author   Kazuhito Hokamura (http://webtech-walker.com/)
+ * @version  0.0.1
+ *
+ */
+
 (function(window) {
 
 var d = document,
