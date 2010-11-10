@@ -9,6 +9,9 @@ pre {
 	background: #EFEFEF;
 	padding: 10px;
 }
+#debug {
+	margin: 20px 0;
+}
 </style>
 </head>
 <body>
@@ -23,14 +26,16 @@ pre {
 
 $('button').click(function() {
     zip2address(input.val(), function(address) {
-        var msg = address ? [
-            '住所: ' + address.all,
-            '都道府県: ' + address.pref,
-            '市町村: ' + address.city
-        ].join('&lt;br&gt;')
-        : '取得に失敗しました';
-
-        debug.html(msg);
+        if (address) {
+            debug.html([
+                '住所: '     + address.all,
+                '都道府県: ' + address.pref,
+                '市町村: '   + address.city
+            ].join('&lt;br&gt;'));
+        }
+        else {
+            debug.html('取得に失敗しました');
+        }
     });
 });
 </code></pre>
@@ -43,14 +48,16 @@ var input = $('input'),
 
 $('button').click(function() {
 	zip2address(input.val(), function(address) {
-		var msg = address ? [
-			'住所: ' + address.all,
-			'都道府県: ' + address.pref,
-			'市町村: ' + address.city
-		].join('<br>')
-		: '取得に失敗しました';
-
-		debug.html(msg);
+		if (address) {
+			debug.html([
+				'住所: '     + address.all,
+				'都道府県: ' + address.pref,
+				'市町村: '   + address.city
+			].join('<br>'));
+		}
+		else {
+			debug.html('取得に失敗しました');
+		}
 	});
 });
 </script>
